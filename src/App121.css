@@ -1,0 +1,51 @@
+/* Main navbar layout */
+
+/* LEFT */
+.brand {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* CENTER */
+.Links {
+  display: flex;
+  gap: 25px;
+}
+
+.Links a {
+  text-decoration: none;
+  font-size: 16px;        /* 🔥 auto dark/light */
+}
+
+.Links a:hover {
+  opacity: 0.85;
+}
+
+/* RIGHT */
+.search-space {
+  display: flex;
+  gap: 10px;
+}
+
+.search-space input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+.search-space button {
+  padding: 6px 14px;
+  background: transparent;
+  color: inherit;          /* 🔥 auto dark/light */
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.search-space button:hover {
+  opacity: 0.85;
+}
+.navbar-custom{
+  width: 100%;
+}
