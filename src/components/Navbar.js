@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 export default function Navbar(props){
   const getnavbarStyle=(mode)=>{
       if(mode ==='dark')
@@ -37,8 +38,8 @@ export default function Navbar(props){
   <div className='brand'>{props.title}</div>
   {/*MIDDLE SECTION*/}
   <div className='Links'>
-    <a className='home' href='#'>HOME</a>
-    <a className='about' href='#'>{props.about}</a>
+    <Link className='home' to='/'>HOME</Link>
+    <Link className='about' to='/about'>{props.about}</Link>
     <a className='link' href='/'>LINK</a>
   </div>
   {/*Right Section*/}

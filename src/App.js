@@ -4,6 +4,7 @@ import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
+import {BrowserRouter, Routes,Route} from 'react-router-dom';
 function App() {
    const [mode ,setMode]=useState("light");
    const toggleMode=()=>{
@@ -67,13 +68,16 @@ function App() {
   };
   return (
   <>
+    <BrowserRouter>
     <Navbar title="TextUtiles" about="About TextUtiles" mode={mode} toggleMode={toggleMode} toggleRedDarkMode={toggleRedDarkMode} toggleBlueDarkMode={toggleBlueDarkMode}/>
     <Alert alert={alert}/>
-    
     <div className="container">
-      <TextForm heading="Enter your text to analyze below" mode={mode} toggleRedDarkMode={toggleRedDarkMode} toggleBlueDarkMode={toggleBlueDarkMode}/>
-      <About/>
+      <Routes>
+          <Route path="/" element={ <TextForm heading="Try TextUtiles- Word Counter, Character Counter, Remove Extra Spaces" mode={mode} toggleRedDarkMode={toggleRedDarkMode} toggleBlueDarkMode={toggleBlueDarkMode}/>}/>
+          <Route path="/about" element={<About mode={mode}/>}/>
+      </Routes>
     </div>
+    </BrowserRouter>
     </>   
   );
 }

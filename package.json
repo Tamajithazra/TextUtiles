@@ -1,5 +1,5 @@
 {
-  "homepage": "https://tamajithazra.github.io/TextUtiles",
+  
   "name": "first_app",
   "version": "0.1.0",
   "private": true,
@@ -9,7 +9,6 @@
     "@testing-library/react": "^16.3.1",
     "@testing-library/user-event": "^13.5.0",
     "dom": "^0.0.3",
-    "gh-pages": "^6.3.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router-dom": "^7.13.0",

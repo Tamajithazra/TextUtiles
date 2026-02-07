@@ -1,32 +1,35 @@
 import React ,{useState}from 'react'
 
-export default function About() {
-    const [myStyle,setmyStyle]=useState({
-        color: 'white',
-        backgroundColor: 'black'
-    });
-    const [btnText,setBtnText]=useState("Enable Dark Mode");
-    const toggleButton=()=>{
-        if(myStyle.color==='white')
+export default function About(props) {
+    const getmyStyle=(mode)=>{
+        if(mode==="dark")
         {
-            setmyStyle({
-                color: 'black',
-                backgroundColor:'white'
-            })
-            setBtnText("Enable Dark Mode");
-        }
-        else
+            return{
+                backgroundColor : "#121212",
+                color: "white"
+            }
+        }else if(mode==="red-dark")
         {
-            setmyStyle({
-                color: 'white',
-                backgroundColor: 'black'
-            })
-            setBtnText("Enable Light Mode");
+            return{
+                backgroundColor: "#730000",
+                color:"#FFFACD"
+            }
+        }else if(mode==="blue-dark")
+        {
+            return{
+                    backgroundColor : "#111184",
+                    color:  "#E0FFFF"
+            }
+        }else{
+            return{
+                backgroundColor : "white",
+                color: "black"
+            }
         }
     }
+    const myStyle=getmyStyle(props.mode);
   return (
     <div  className="noob my-5" style={myStyle}>
-      <>
         <h1>About Us</h1>
         <div className="accordion" id="accordionPanelsStayOpenExample">
             <div className="accordion-item">
@@ -47,7 +50,7 @@ export default function About() {
                 Accordion Item #2
             </button>
             </h2>
-            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+            <div id="panelsStayOpen-collapseTwo" clasName="accordion-collapse collapse">
             <div className="accordion-body" style={myStyle}>
                 <strong>This is the second item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
             </div>
@@ -66,8 +69,6 @@ export default function About() {
         </div>
     </div>
     </div>
-    <button type="button" onClick={toggleButton} className="btn btn-primary">{btnText}</button>
-      </>
     </div>
   )
 }
